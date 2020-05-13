@@ -11,7 +11,7 @@ public class RoomRegister {
 	 * @param num
 	 */
 	public void createNSSK(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, false, true, 1);
+		NonSmokingSingleKing nssk = new NonSmokingSingleKing(RoomNumber,true);
 		register.add(RoomNumber - 111, nssk);
 	}
 	
@@ -21,8 +21,8 @@ public class RoomRegister {
 	 * @param num
 	 */
 	public void createSSK(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, true, true, 1);
-		register.add(RoomNumber - 111, nssk);
+		SmokingSingleKing ssk = new SmokingSingleKing(RoomNumber,true);
+		register.add(RoomNumber - 111, ssk);
 	}
 	
 	/**
@@ -31,8 +31,8 @@ public class RoomRegister {
 	 * @param num
 	 */
 	public void createNSSQ(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, false, false, 1);
-		register.add(RoomNumber - 111, nssk);
+		NonSmokingSingleQueen nssq = new NonSmokingSingleQueen(RoomNumber,true);
+		register.add(RoomNumber - 111, nssq);
 	}
 	
 	/**
@@ -41,8 +41,8 @@ public class RoomRegister {
 	 * @param num
 	 */
 	public void createSSQ(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, true, false, 1);
-		register.add(RoomNumber - 111, nssk);
+		SmokingSingleQueen ssq = new SmokingSingleQueen(RoomNumber,true);
+		register.add(RoomNumber - 111, ssq);
 	}
 	/**
 	 * Creates a room of NonSmoking Double Queen bed room with the specified 
@@ -50,8 +50,8 @@ public class RoomRegister {
 	 * @param num
 	 */
 	public void createNSDQ(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, false, false, 2);
-		register.add(RoomNumber - 111, nssk);
+		NonSmokingDoubleQueen nsdq = new NonSmokingDoubleQueen(RoomNumber, true);
+		register.add(RoomNumber - 111, nsdq);
 	}
 	
 	/**
@@ -60,18 +60,19 @@ public class RoomRegister {
 	 * @param num
 	 */
 	public void createSDQ(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, true, false, 2);
-		register.add(RoomNumber - 111, nssk);
+		SmokingDoubleQueen sdq = new SmokingDoubleQueen(RoomNumber, true);
+		register.add(RoomNumber - 111, sdq);
 	}
 	
 	/**
-	 * Creates a room of Smoking Triple queen bed room with the specified 
-	 * room number and adds them to the registry.
+	 * Creates a custom room of specified number, smoking, bedsize, bednumber 
+	 * and vacancy.
 	 * @param num
 	 */
-	public void createSTQ(int RoomNumber) {
-		RoomType nssk = new RoomType(RoomNumber, true, false, 3);
-		register.add(RoomNumber - 111, nssk);
+	public void createRoom(int RoomNumber, boolean smoking, boolean king, 
+	int bedNumber, boolean vacant) {
+		Room newRoom = new Room(RoomNumber, smoking, king, bedNumber, vacant);
+		register.add(RoomNumber - 111, newRoom);
 	}
 
 
