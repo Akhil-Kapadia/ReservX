@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DriverManager 
 {
-	public static void main(String[] args)
+	public static void forName(String[] args)
 	{
 		try(
 			//Allocate a database 'Connection' object
